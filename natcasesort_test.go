@@ -25,7 +25,7 @@ func TestSort(t *testing.T) {
 		},
 		{
 			[]string{"9", "a", "1", "f", "8", "A", "40", "e", "z", "7", "Z", "v", "13"},
-			[]string{"1", "13", "40", "7", "8", "9", "A", "a", "e", "f", "v", "Z", "z"},
+			[]string{"1", "7", "8", "9", "13", "40", "A", "a", "e", "f", "v", "Z", "z"},
 		},
 	}
 	for _, s := range samples {
@@ -36,4 +36,33 @@ func TestSort(t *testing.T) {
 			}
 		}
 	}
+}
+
+func TestOut(t *testing.T) {
+	in := []string{
+		"z",
+		"p",
+		"14",
+		"40",
+		"30",
+		"P",
+		"b",
+		"f",
+		"g",
+		"1",
+		"x",
+		"v",
+		"S",
+		"s",
+		"13",
+		"9",
+		"7",
+		"a",
+		"e",
+		"E",
+		"zz",
+		"A",
+		"aa"}
+	sort.Sort(Sort(in))
+	t.Log(in)
 }

@@ -1,6 +1,7 @@
 package natcasesort
 
 import (
+	"strconv"
 	"unicode"
 )
 
@@ -8,8 +9,13 @@ type Sort []string
 
 func (s Sort) Len() int      { return len(s) }
 func (s Sort) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
-
 func (s Sort) Less(i, j int) bool {
+	if i, err := strconv.Atoi(s[i]); err == nil {
+		if j, err := strconv.Atoi(s[j]); err == nil {
+			return i < j
+		}
+	}
+
 	iRunes := []rune(s[i])
 	jRunes := []rune(s[j])
 

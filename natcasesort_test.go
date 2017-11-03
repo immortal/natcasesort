@@ -66,3 +66,9 @@ func TestOut(t *testing.T) {
 	sort.Sort(Sort(in))
 	t.Log(in)
 }
+
+func TestOut2(t *testing.T) {
+	in := []string{"z1", "z10", "z100", "z101", "z102", "z11", "z12", "z13", "z14", "z15", "z16", "z17", "z18", "z19", "z2", "z20", "z3", "z4", "z5", "z6", "z7", "z8", "z9"}
+	sort.Sort(Sort(in))
+	t.Log(in)
+}
